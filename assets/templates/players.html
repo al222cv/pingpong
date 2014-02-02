@@ -1,0 +1,13 @@
+<button class="special" ng-click="addPlayer()">Lägg till spelare</button>
+<div class="grid">
+	<button class="cell item" ng-repeat="p in players" ng-click="togglePlayer(p)">
+		<div class="media">
+			<img width="70" height="70" src="https://numberkiz.com/media/service/user_default_icon.png">
+			<div class="flex">
+				<h4>{{p.name}}</h4>
+				<p>Nuvarande hcp: <span>4</span></p>
+				<p>Turneringar: <span>{{p.games}}</span></p>
+			</div>
+		</div>
+	</button>
+</div>

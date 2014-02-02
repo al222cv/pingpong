@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="app" ng-class="{noscroll: isOpen}">
+<head>
+    <link href="css/fontello.css" type="text/css" rel="stylesheet">
+    <link href="css/app.css" type="text/css" rel="stylesheet">
+    <!-- <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0,maximum-scale=1.0,user-scalable=0"> -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300" rel="stylesheet" type="text/css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Office Ping Pong</title>
+</head>
+<body>
+    <nav ng-class="{active: isOpen}">
+      <ul>
+        <li><button ng-click="goTo('')">Hem</button></li>
+        <li><button ng-click="goTo('players')">Spelare</button></li>
+      </ul>
+    </nav>
+    <header ng-class="{open: isOpen}">
+        <button ng-click="isOpen = !isOpen"><i class="icon-menu"></i></button>
+    </header>
+    <div class="wrapper" ng-class="{open: isOpen}" ng-click="closeIfOpen()">
+        <div class="main container">
+            <div class="content" ng-view></div>
+        </div>
+    </div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-touch.min.js"></script>
+    <script type="text/javascript" src="js/pouchdb-1.1.0.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "ping-pong",
+  "description": "ping pong scoring app",
+  "version": "0.0.1",
+  "author": {
+    "name" : "Andreas Larsson",
+    "email" : "al222cv@gmail.com"
+  },
+  "dependencies": {
+    "express": "3.x"
+  }
+}

@@ -1,0 +1,253 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* MY MARKUP */
+*{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box; 
+}
+
+html, body {
+  /*height: 100%;*/
+  /*overflow: hidden;*/
+  overflow-x: hidden; 
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+}
+
+body{
+	/*background: #555;*/
+	background: #f6f6f6;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 170%;
+	color:#818894;
+
+	/*display: flex;
+	display: -webkit-flex;*/
+}
+html.noscroll{
+	overflow-y: hidden;
+}
+
+button{
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+h1{
+	color: #fff;
+	font-weight: bold;
+	font-size: 22px;
+	padding: 9px 0;
+}
+h4{
+	font-size: 20px;
+	color: #2f353e;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+header{
+	background-color: #25292c;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,1);
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+	width: 100%;
+	-webkit-transform: translate3d(0,0,0);
+	transition: -webkit-transform .3s;
+}
+
+header button{
+	padding: 10px;
+	font-size: 22px;
+	color: #fff;
+}
+
+nav {
+  position: fixed;
+  background: #555;
+  width: 260px;
+  height: 100%;
+  overflow-x:hidden;
+  overflow-y: auto;
+  -webkit-transform: translate3d(-260px,0,0);
+  transition: -webkit-transform .3s;
+}
+
+nav ul {
+  padding: 20px;
+  list-style: none;
+}
+
+nav li button {
+  display: block;
+  padding: 20px;
+  color: #fff;
+}
+
+nav li:not(:last-child) a {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.wrapper{
+	/*flex: 1;
+	-webkit-flex: 1;*/
+	background: #f6f6f6;
+	box-shadow: -3px -3px 3px rgba(0,0,0,1);
+  	-webkit-transform: translate3d(0,0,0);
+	transition: -webkit-transform .3s;
+	/*height: 100%;*/
+	/*overflow-x: hidden;
+	overflow-y: auto;*/
+	overflow-x: hidden;
+}
+
+.open{
+	-webkit-transform: translate3d(260px,0,0);
+	transform: translate3d(260px,0,0);
+}
+
+nav.active{
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.container{
+	width: 100%;
+}
+
+.main{
+	margin: 60px 0 20px 0;
+}
+
+.content{
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 20px;
+	   
+}
+
+.center{
+	text-align: center;
+}
+
+.special{
+	text-align: center;
+	padding: 14px 10px;
+	border: 1px solid #eeeeee;
+	background: #9BC217;
+	border-radius: 3px;
+	background: -webkit-linear-gradient(top, #9BC217, #86B40F);
+	color: #fff;
+	font-weight: 700;
+	border: 1px solid #88A333;
+	-webkit-box-shadow: 0 0 5px #88A333;
+	box-shadow: 0 0 5px #88A333;
+	margin: 20px 0;
+	width: 100%;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.grid > .cell{
+	margin: 10px 0;
+}
+
+.item{
+	background: #fff;
+	padding: 10px;
+	width: 100%;
+	border: 1px solid #e6e6e6;
+}
+
+@media (min-width: 800px) {
+	.grid{
+		-webkit-column-count: 2;
+		-webkit-column-gap: 2em;
+		-webkit-column-fill: auto;
+		column-count: 2;
+		column-gap: 2em;
+		column-fill: auto;
+	}
+
+	.grid .cell{
+		display: inline-block;
+		-webkit-column-break-inside: avoid;
+		column-break-inside: avoid;
+	}
+}
+
+.media{
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	width: 100%;
+	text-align: left;
+}
+
+.media .icon-circle{
+	color: #eee;
+	font-size: 40px;
+}
+
+.media .icon-ok{
+	color: #9BC217;
+	font-size: 30px;
+	margin-left: -50px;
+	margin-right: 8px;
+}
+
+.flex {
+	flex:1;
+	-webkit-flex:1;
+	margin-left: 1em;
+	margin-right: 1em;
+}
